@@ -84,9 +84,7 @@
           <h2 id="abstract-title">Abstract</h2>
         </header>
         <div class="abstract-copy reveal">
-          <p>Assessing a recorded presentation against a rubric requires evidence from audio, video, and slides. Expert labels are costly to obtain, experts who apply the same rubric disagree, and general multimodal language models concentrate their scores near the middle of the scale.</p>
-          <p>We present <strong>AIMPACT</strong>, a multimodal assessment system that scores a presentation in three stages. An evidence-decoupled multi-agent stage converts the three input streams into a shared, traceable evidence record, from which specialist agents score the rubric dimensions. A reliability-guided collaboration graph then estimates the reliability of each dimension’s evidence without labels, activates deliberation only where a disagreeing peer rests on more reliable evidence, and combines the outcome into a council prior. <strong>STAR-PO</strong>, a rubric-conditioned generative judge built on Qwen3-8B, aligns this prior with expert scoring preferences. It is first fine-tuned on expert corrections to the prior and then optimized on policy under a reward that scores agreement with the confidence-weighted expert distribution together with evidence faithfulness, confidence calibration, and label-free rubric following.</p>
-          <p>On a corpus of 35 classroom presentations annotated by five experts on eight dimensions, the full system reaches a Spearman correlation of 0.833 with the expert consensus, against 0.374 for a transcript-only language-model baseline, and each stage improves the axis it targets. Under matched inputs, AIMPACT ranks presentations more like a human expert than four omni multimodal judges, which compress their scores toward the middle of the scale. Because the rubric is an input, the trained judge transfers to the speech dimensions of SpeechOcean762 without retraining.</p>
+          <p>Recorded presentation assessment needs evidence from speech, video, and slides, but expert labels are expensive and general multimodal models often flatten scores. <strong>AIMPACT</strong> builds a traceable evidence record, resolves disagreements through reliability-guided collaboration, and uses the rubric-conditioned <strong>STAR-PO</strong> judge to produce expert-aligned scores and coaching feedback. On 35 classroom presentations, it reaches a Spearman correlation of 0.833 with expert consensus, compared with 0.374 for a transcript-only baseline.</p>
         </div>
       </div>
     </section>
@@ -184,6 +182,114 @@
                 <div style="--tone: #8b5cf6"><span>Slide reference</span><i><b style="--score: 54%"></b></i><strong>2.7</strong></div>
               </div>
               <blockquote><span>Expert comment</span>“The speaker maintains strong audience contact and a confident stance. Refer to the diagrams more explicitly when explaining their relationships.”</blockquote>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-video" role="img" aria-label="Placeholder video preview for presentation sample 04">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Sample video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Sample 04</span><time>07:32</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="case-content">
+              <div class="case-title"><div><span>Example presentation</span><h4>Precise language, restrained gestures</h4></div><span class="sample-label">Illustrative</span></div>
+              <div class="score-list" aria-label="Illustrative dimension scores">
+                <div style="--tone: #2563eb"><span>Fluency</span><i><b style="--score: 88%"></b></i><strong>4.4</strong></div>
+                <div style="--tone: #7c3aed"><span>Prosody</span><i><b style="--score: 74%"></b></i><strong>3.7</strong></div>
+                <div style="--tone: #0891b2"><span>Language</span><i><b style="--score: 92%"></b></i><strong>4.6</strong></div>
+                <div style="--tone: #4f46e5"><span>Non-vocal</span><i><b style="--score: 58%"></b></i><strong>2.9</strong></div>
+              </div>
+              <blockquote><span>Expert comment</span>“Terminology is accurate and concise. More purposeful gestures would make the comparison between conditions easier to follow.”</blockquote>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-video case-video-two" role="img" aria-label="Placeholder video preview for presentation sample 05">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Sample video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Sample 05</span><time>09:15</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="case-content">
+              <div class="case-title"><div><span>Example presentation</span><h4>Engaging opening, dense conclusion</h4></div><span class="sample-label">Illustrative</span></div>
+              <div class="score-list" aria-label="Illustrative dimension scores">
+                <div style="--tone: #2563eb"><span>Fluency</span><i><b style="--score: 78%"></b></i><strong>3.9</strong></div>
+                <div style="--tone: #7c3aed"><span>Prosody</span><i><b style="--score: 86%"></b></i><strong>4.3</strong></div>
+                <div style="--tone: #0284c7"><span>Slide design</span><i><b style="--score: 72%"></b></i><strong>3.6</strong></div>
+                <div style="--tone: #6366f1"><span>Slide content</span><i><b style="--score: 62%"></b></i><strong>3.1</strong></div>
+              </div>
+              <blockquote><span>Expert comment</span>“The opening question draws the audience in immediately. Simplify the final slide so the three takeaways can be absorbed at a glance.”</blockquote>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-video case-video-three" role="img" aria-label="Placeholder video preview for presentation sample 06">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Sample video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Sample 06</span><time>05:57</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="case-content">
+              <div class="case-title"><div><span>Example presentation</span><h4>Concise delivery, limited context</h4></div><span class="sample-label">Illustrative</span></div>
+              <div class="score-list" aria-label="Illustrative dimension scores">
+                <div style="--tone: #0d9488"><span>Pronunciation</span><i><b style="--score: 84%"></b></i><strong>4.2</strong></div>
+                <div style="--tone: #7c3aed"><span>Prosody</span><i><b style="--score: 68%"></b></i><strong>3.4</strong></div>
+                <div style="--tone: #4f46e5"><span>Non-vocal</span><i><b style="--score: 76%"></b></i><strong>3.8</strong></div>
+                <div style="--tone: #8b5cf6"><span>Structure</span><i><b style="--score: 56%"></b></i><strong>2.8</strong></div>
+              </div>
+              <blockquote><span>Expert comment</span>“The delivery is concise and controlled. Add a brief framing statement before the first result so the audience understands why it matters.”</blockquote>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-video" role="img" aria-label="Placeholder video preview for presentation sample 07">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Sample video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Sample 07</span><time>11:03</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="case-content">
+              <div class="case-title"><div><span>Example presentation</span><h4>Detailed analysis, steady pacing</h4></div><span class="sample-label">Illustrative</span></div>
+              <div class="score-list" aria-label="Illustrative dimension scores">
+                <div style="--tone: #2563eb"><span>Fluency</span><i><b style="--score: 80%"></b></i><strong>4.0</strong></div>
+                <div style="--tone: #7c3aed"><span>Prosody</span><i><b style="--score: 76%"></b></i><strong>3.8</strong></div>
+                <div style="--tone: #0891b2"><span>Language</span><i><b style="--score: 90%"></b></i><strong>4.5</strong></div>
+                <div style="--tone: #6366f1"><span>Slide content</span><i><b style="--score: 86%"></b></i><strong>4.3</strong></div>
+              </div>
+              <blockquote><span>Expert comment</span>“The analysis is thorough and the pace gives each result room. A shorter methods recap would keep attention on the main contribution.”</blockquote>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-video case-video-two" role="img" aria-label="Placeholder video preview for presentation sample 08">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Sample video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Sample 08</span><time>08:51</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="case-content">
+              <div class="case-title"><div><span>Example presentation</span><h4>Natural delivery, weak slide hierarchy</h4></div><span class="sample-label">Illustrative</span></div>
+              <div class="score-list" aria-label="Illustrative dimension scores">
+                <div style="--tone: #2563eb"><span>Fluency</span><i><b style="--score: 90%"></b></i><strong>4.5</strong></div>
+                <div style="--tone: #7c3aed"><span>Prosody</span><i><b style="--score: 82%"></b></i><strong>4.1</strong></div>
+                <div style="--tone: #0284c7"><span>Slide design</span><i><b style="--score: 52%"></b></i><strong>2.6</strong></div>
+                <div style="--tone: #4f46e5"><span>Non-vocal</span><i><b style="--score: 78%"></b></i><strong>3.9</strong></div>
+              </div>
+              <blockquote><span>Expert comment</span>“Delivery feels conversational and well rehearsed. Strengthen the visual hierarchy so headings and evidence are distinguishable from supporting detail.”</blockquote>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-video case-video-three" role="img" aria-label="Placeholder video preview for presentation sample 09">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Sample video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Sample 09</span><time>07:44</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="case-content">
+              <div class="case-title"><div><span>Example presentation</span><h4>Strong synthesis, abrupt transitions</h4></div><span class="sample-label">Illustrative</span></div>
+              <div class="score-list" aria-label="Illustrative dimension scores">
+                <div style="--tone: #0d9488"><span>Pronunciation</span><i><b style="--score: 88%"></b></i><strong>4.4</strong></div>
+                <div style="--tone: #7c3aed"><span>Prosody</span><i><b style="--score: 72%"></b></i><strong>3.6</strong></div>
+                <div style="--tone: #6366f1"><span>Structure</span><i><b style="--score: 70%"></b></i><strong>3.5</strong></div>
+                <div style="--tone: #8b5cf6"><span>Slide reference</span><i><b style="--score: 84%"></b></i><strong>4.2</strong></div>
+              </div>
+              <blockquote><span>Expert comment</span>“The final synthesis connects the findings effectively. Use short verbal signposts between sections to make the argument easier to navigate.”</blockquote>
             </div>
           </article>
         </div>
@@ -300,6 +406,90 @@
               <div class="eval-tags"><span>Multimodal</span><span>Coaching cue</span></div>
             </div>
           </article>
+
+          <article class="experiment-case reveal">
+            <div class="case-video" role="img" aria-label="Placeholder video preview for experiment example 04">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Experiment video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Evaluation 04</span><time>07:32</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="model-eval">
+              <div class="eval-head"><span>Illustrative model evaluation</span><b>Sample D</b></div>
+              <h3>Precise wording, limited movement</h3>
+              <p>The model identifies accurate terminology and clear comparisons, then links the low non-vocal score to long intervals with no purposeful gestures. It recommends using one gesture to mark each contrast.</p>
+              <div class="eval-tags"><span>Cross-modal</span><span>Actionable</span></div>
+            </div>
+          </article>
+
+          <article class="experiment-case reveal">
+            <div class="case-video case-video-two" role="img" aria-label="Placeholder video preview for experiment example 05">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Experiment video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Evaluation 05</span><time>09:15</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="model-eval">
+              <div class="eval-head"><span>Illustrative model evaluation</span><b>Sample E</b></div>
+              <h3>Engaging start, overloaded ending</h3>
+              <p>The opening is rewarded for immediate audience engagement. Near the end, the model finds dense slide text competing with the spoken summary and suggests revealing the three conclusions one at a time.</p>
+              <div class="eval-tags"><span>Slide-aware</span><span>Coaching cue</span></div>
+            </div>
+          </article>
+
+          <article class="experiment-case reveal">
+            <div class="case-video case-video-three" role="img" aria-label="Placeholder video preview for experiment example 06">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Experiment video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Evaluation 06</span><time>05:57</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="model-eval">
+              <div class="eval-head"><span>Illustrative model evaluation</span><b>Sample F</b></div>
+              <h3>Efficient explanation, missing frame</h3>
+              <p>The model recognizes concise delivery but detects that the first finding appears before the research question is established. It proposes a one-sentence framing statement before the result slide.</p>
+              <div class="eval-tags"><span>Structure</span><span>Time-anchored</span></div>
+            </div>
+          </article>
+
+          <article class="experiment-case reveal">
+            <div class="case-video" role="img" aria-label="Placeholder video preview for experiment example 07">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Experiment video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Evaluation 07</span><time>11:03</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="model-eval">
+              <div class="eval-head"><span>Illustrative model evaluation</span><b>Sample G</b></div>
+              <h3>Thorough analysis, lengthy setup</h3>
+              <p>The evidence record shows consistent pacing and detailed reasoning. The model flags a long methods recap after the audience already understands the setup and recommends moving directly to the key ablation.</p>
+              <div class="eval-tags"><span>Evidence-linked</span><span>Conciseness</span></div>
+            </div>
+          </article>
+
+          <article class="experiment-case reveal">
+            <div class="case-video case-video-two" role="img" aria-label="Placeholder video preview for experiment example 08">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Experiment video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Evaluation 08</span><time>08:51</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="model-eval">
+              <div class="eval-head"><span>Illustrative model evaluation</span><b>Sample H</b></div>
+              <h3>Natural delivery, flat hierarchy</h3>
+              <p>The speaker sounds conversational and maintains audience contact, while the slide parser finds little distinction between claims and supporting detail. The feedback recommends stronger headings and spacing.</p>
+              <div class="eval-tags"><span>Visual evidence</span><span>Multimodal</span></div>
+            </div>
+          </article>
+
+          <article class="experiment-case reveal">
+            <div class="case-video case-video-three" role="img" aria-label="Placeholder video preview for experiment example 09">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div><div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Experiment video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Evaluation 09</span><time>07:44</time></div><div class="video-timeline"><i></i></div>
+            </div>
+            <div class="model-eval">
+              <div class="eval-head"><span>Illustrative model evaluation</span><b>Sample I</b></div>
+              <h3>Strong synthesis, weak signposting</h3>
+              <p>The closing synthesis accurately connects the findings, but the temporal trace reveals abrupt topic changes earlier in the talk. The model adds brief verbal signposts at the two transition points.</p>
+              <div class="eval-tags"><span>Temporal evidence</span><span>Actionable</span></div>
+            </div>
+          </article>
         </div>
 
         <div class="experiment-label quant-label reveal"><span>Comparison placeholders</span><i></i></div>
@@ -339,11 +529,10 @@
       </div>
     </section>
 
-    <section class="paper-section summary-section" id="summary" aria-labelledby="summary-title">
+    <section class="paper-section summary-section" id="summary" aria-label="Summary">
       <div class="section-shell summary-wrap reveal">
         <div>
-          <h2 id="summary-title">Evidence you can trace.<br>Feedback you can act on.</h2>
-          <p class="summary-copy">AIMPACT reframes automated presentation assessment as a transparent, evidence-grounded collaboration between specialized agents and an expert-aligned judge. By preserving provenance, reasoning over reliability, and treating the rubric as an input, the system delivers adaptable scores and specific coaching feedback while keeping human judgment at the center.</p>
+          <p class="summary-copy">AIMPACT provides a transparent framework for assessing recorded presentations from speech, video, and slides. By organizing multimodal evidence, coordinating specialized evaluators, and aligning judgments with expert preferences, it produces traceable scores and practical coaching feedback across rubric dimensions. The results suggest that presentation assessment can be both reliable and interpretable without losing the context behind each judgment.</p>
         </div>
       </div>
     </section>
