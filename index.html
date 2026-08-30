@@ -1,66 +1,360 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AIMPACT</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            color: #222;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 24px;
-        }
-
-        h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 20px;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 22px;
-            background: black;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AIMPACT is an AI-enabled multimodal presentation assessment and coaching tutor.">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta property="og:title" content="AIMPACT">
+  <meta property="og:description" content="AI-Enabled Multimodal Presentation Assessment & Coaching Tutor">
+  <meta property="og:type" content="website">
+  <title>AIMPACT — Multimodal Presentation Assessment</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
 
-<div class="container">
-
-    <h1>AIMPACT</h1>
-
-    <p>
-        An AI agent designed for evaluating presentations.
-    </p>
-
-    <a
-        class="button"
-        href="https://github.com/"
-    >
-        View on GitHub
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="AIMPACT home">
+      <span class="wordmark-mark" aria-hidden="true">A</span>
+      <span>AIMPACT</span>
     </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#abstract">Abstract</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+    </nav>
+    <a class="nav-paper" href="aimpact_draft.pdf">Read paper <span aria-hidden="true">↗</span></a>
+  </header>
 
-</div>
+  <main id="top">
+    <section class="hero section-shell" aria-labelledby="paper-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Under review · ICLR 2027</p>
+        <h1 id="paper-title">AIMPACT</h1>
+        <p class="hero-subtitle">AI-Enabled Multimodal Presentation<br>Assessment <i>&amp;</i> Coaching Tutor</p>
+        <p class="hero-deck">From multimodal evidence to expert-aligned, actionable feedback.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="aimpact_draft.pdf">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg>
+            Paper
+          </a>
+          <a class="button button-secondary" href="https://github.com/FairyStories-wzj/AIMPACT">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.82a9.6 9.6 0 0 1 2.5.34c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+            Code
+          </a>
+        </div>
+      </div>
 
+      <div class="hero-visual" aria-label="A presentation transformed into evidence-linked coaching feedback">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="visual-stage">
+          <div class="stage-screen">
+            <div class="screen-bar"><i></i><i></i><i></i></div>
+            <div class="screen-content">
+              <div class="slide-title"></div>
+              <div class="slide-grid">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div class="slide-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="presenter">
+            <span class="head"></span><span class="body"></span><span class="arm arm-left"></span><span class="arm arm-right"></span>
+          </div>
+          <div class="floor-line"></div>
+        </div>
+        <div class="signal-card signal-a"><b>01:42</b><span>Evidence traced</span></div>
+        <div class="signal-card signal-b"><b>8</b><span>Rubric dimensions</span></div>
+        <div class="score-card">
+          <div class="score-head"><span>Delivery analysis</span><i>live</i></div>
+          <div class="score-row"><span>Fluency</span><b style="--score: 78%"></b></div>
+          <div class="score-row"><span>Prosody</span><b style="--score: 63%"></b></div>
+          <div class="score-row"><span>Visuals</span><b style="--score: 87%"></b></div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#abstract"><span>Scroll to explore</span><i aria-hidden="true">↓</i></a>
+    </section>
+
+    <section class="paper-section abstract-section" id="abstract" aria-labelledby="abstract-title">
+      <div class="section-shell section-grid">
+        <header class="section-heading reveal">
+          <h2 id="abstract-title">Abstract</h2>
+        </header>
+        <div class="abstract-copy reveal">
+          <p>Assessing a recorded presentation against a rubric requires evidence from audio, video, and slides. Expert labels are costly to obtain, experts who apply the same rubric disagree, and general multimodal language models concentrate their scores near the middle of the scale.</p>
+          <p>We present <strong>AIMPACT</strong>, a multimodal assessment system that scores a presentation in three stages. An evidence-decoupled multi-agent stage converts the three input streams into a shared, traceable evidence record, from which specialist agents score the rubric dimensions. A reliability-guided collaboration graph then estimates the reliability of each dimension’s evidence without labels, activates deliberation only where a disagreeing peer rests on more reliable evidence, and combines the outcome into a council prior. <strong>STAR-PO</strong>, a rubric-conditioned generative judge built on Qwen3-8B, aligns this prior with expert scoring preferences. It is first fine-tuned on expert corrections to the prior and then optimized on policy under a reward that scores agreement with the confidence-weighted expert distribution together with evidence faithfulness, confidence calibration, and label-free rubric following.</p>
+          <p>On a corpus of 35 classroom presentations annotated by five experts on eight dimensions, the full system reaches a Spearman correlation of 0.833 with the expert consensus, against 0.374 for a transcript-only language-model baseline, and each stage improves the axis it targets. Under matched inputs, AIMPACT ranks presentations more like a human expert than four omni multimodal judges, which compress their scores toward the middle of the scale. Because the rubric is an input, the trained judge transfers to the speech dimensions of SpeechOcean762 without retraining.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section dataset-section" id="dataset" aria-labelledby="dataset-title">
+      <div class="section-shell section-grid">
+        <header class="section-heading reveal">
+          <h2 id="dataset-title">Dataset</h2>
+        </header>
+
+        <div class="dataset-note reveal">
+          <p>The final dataset statistics and presentation examples are being prepared. The values and comments below are illustrative placeholders for the planned content.</p>
+          <span>Placeholder content</span>
+        </div>
+
+        <figure class="dataset-chart reveal" aria-labelledby="dataset-chart-title">
+          <figcaption>
+            <div>
+              <h3 id="dataset-chart-title">Score distribution</h3>
+              <p>Illustrative distribution of expert ratings across rubric dimensions.</p>
+            </div>
+            <span class="chart-badge">Sample data</span>
+          </figcaption>
+          <div class="distribution-chart" role="img" aria-label="Placeholder bar chart showing illustrative score distributions from one to five for eight assessment dimensions">
+            <div class="chart-y-labels" aria-hidden="true"><span>40%</span><span>30%</span><span>20%</span><span>10%</span><span>0</span></div>
+            <div class="chart-plot">
+              <div class="chart-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="distribution-bars" aria-hidden="true">
+                <div><i style="--value: 28%"></i><span>1</span></div>
+                <div><i style="--value: 47%"></i><span>2</span></div>
+                <div><i style="--value: 78%"></i><span>3</span></div>
+                <div><i style="--value: 92%"></i><span>4</span></div>
+                <div><i style="--value: 56%"></i><span>5</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-legend"><i></i> Share of expert annotations <span>Expert score (1–5)</span></div>
+        </figure>
+
+        <div class="case-list">
+          <article class="case-card reveal">
+            <div class="case-video" role="img" aria-label="Placeholder video preview for presentation sample 01">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div>
+              <div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Sample video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Sample 01</span><time>08:24</time></div>
+              <div class="video-timeline"><i></i></div>
+            </div>
+            <div class="case-content">
+              <div class="case-title"><div><span>Example presentation</span><h4>Clear structure, measured delivery</h4></div><span class="sample-label">Illustrative</span></div>
+              <div class="score-list" aria-label="Illustrative dimension scores">
+                <div style="--tone: #2563eb"><span>Fluency</span><i><b style="--score: 82%"></b></i><strong>4.1</strong></div>
+                <div style="--tone: #7c3aed"><span>Prosody</span><i><b style="--score: 70%"></b></i><strong>3.5</strong></div>
+                <div style="--tone: #0891b2"><span>Language</span><i><b style="--score: 88%"></b></i><strong>4.4</strong></div>
+                <div style="--tone: #4f46e5"><span>Non-vocal</span><i><b style="--score: 76%"></b></i><strong>3.8</strong></div>
+              </div>
+              <blockquote><span>Expert comment</span>“The argument is easy to follow and transitions are clear. More variation in emphasis would help the key findings stand out.”</blockquote>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-video case-video-two" role="img" aria-label="Placeholder video preview for presentation sample 02">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div>
+              <div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Sample video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Sample 02</span><time>06:48</time></div>
+              <div class="video-timeline"><i></i></div>
+            </div>
+            <div class="case-content">
+              <div class="case-title"><div><span>Example presentation</span><h4>Strong visuals, uneven pacing</h4></div><span class="sample-label">Illustrative</span></div>
+              <div class="score-list" aria-label="Illustrative dimension scores">
+                <div style="--tone: #2563eb"><span>Fluency</span><i><b style="--score: 60%"></b></i><strong>3.0</strong></div>
+                <div style="--tone: #7c3aed"><span>Prosody</span><i><b style="--score: 66%"></b></i><strong>3.3</strong></div>
+                <div style="--tone: #0284c7"><span>Slide design</span><i><b style="--score: 90%"></b></i><strong>4.5</strong></div>
+                <div style="--tone: #6366f1"><span>Slide content</span><i><b style="--score: 84%"></b></i><strong>4.2</strong></div>
+              </div>
+              <blockquote><span>Expert comment</span>“The slides support the message effectively. The middle section moves too quickly, so pausing after each main result would improve comprehension.”</blockquote>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-video case-video-three" role="img" aria-label="Placeholder video preview for presentation sample 03">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div>
+              <div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Sample video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Sample 03</span><time>10:06</time></div>
+              <div class="video-timeline"><i></i></div>
+            </div>
+            <div class="case-content">
+              <div class="case-title"><div><span>Example presentation</span><h4>Confident delivery, limited slide reference</h4></div><span class="sample-label">Illustrative</span></div>
+              <div class="score-list" aria-label="Illustrative dimension scores">
+                <div style="--tone: #0d9488"><span>Pronunciation</span><i><b style="--score: 86%"></b></i><strong>4.3</strong></div>
+                <div style="--tone: #7c3aed"><span>Prosody</span><i><b style="--score: 80%"></b></i><strong>4.0</strong></div>
+                <div style="--tone: #4f46e5"><span>Non-vocal</span><i><b style="--score: 90%"></b></i><strong>4.5</strong></div>
+                <div style="--tone: #8b5cf6"><span>Slide reference</span><i><b style="--score: 54%"></b></i><strong>2.7</strong></div>
+              </div>
+              <blockquote><span>Expert comment</span>“The speaker maintains strong audience contact and a confident stance. Refer to the diagrams more explicitly when explaining their relationships.”</blockquote>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section method-section" id="method" aria-labelledby="method-title">
+      <div class="section-shell">
+        <header class="section-heading reveal">
+          <h2 id="method-title">Method</h2>
+        </header>
+
+        <div class="method-intro reveal">
+          <p>AIMPACT separates <strong>what was observed</strong> from <strong>how it should be judged</strong>, keeping every assessment traceable to evidence.</p>
+        </div>
+
+        <figure class="pipeline-figure reveal">
+          <div class="method-placeholder" role="img" aria-label="Placeholder for the AIMPACT method figure">
+            <div class="placeholder-flow" aria-hidden="true">
+              <span><i></i><b></b><em></em></span>
+              <span><i></i><b></b><em></em></span>
+              <span><i></i><b></b><em></em></span>
+            </div>
+            <div class="method-placeholder-copy">
+              <strong>Method figure placeholder</strong>
+              <span>The final AIMPACT pipeline diagram will appear here.</span>
+            </div>
+          </div>
+        </figure>
+
+        <div class="stage-list">
+          <article class="stage-card reveal">
+            <div class="stage-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h32v24H8zM14 18h7v12h-7zM27 17v14M33 20v8"/></svg>
+            </div>
+            <h3>Evidence extraction</h3>
+            <p>Frozen perception models and deterministic operators organize video, audio, and slides into a shared temporal evidence memory.</p>
+          </article>
+          <article class="stage-card reveal">
+            <div class="stage-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="12" r="4"/><circle cx="12" cy="32" r="4"/><circle cx="36" cy="32" r="4"/><path d="m21 15-7 13m13-13 7 13M16 32h16"/></svg>
+            </div>
+            <h3>Reliable collaboration</h3>
+            <p>Specialist agents score rubric dimensions while a reliability-guided graph activates deliberation only where better evidence warrants it.</p>
+          </article>
+          <article class="stage-card reveal">
+            <div class="stage-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 10h30v23H23l-8 6v-6H9zM16 18h16M16 24h11"/></svg>
+            </div>
+            <h3>Expert preference alignment</h3>
+            <p>STAR-PO turns the council prior into rubric-conditioned scores, confidence, rationales, and time-anchored coaching feedback.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section results-section" id="results" aria-labelledby="results-title">
+      <div class="section-shell section-grid">
+        <header class="section-heading reveal">
+          <h2 id="results-title">Experiments</h2>
+        </header>
+
+        <div class="experiment-note reveal">
+          <p>Qualitative examples and quantitative comparisons will be added as the evaluation set is finalized.</p>
+          <span>Illustrative placeholders</span>
+        </div>
+
+        <div class="experiment-label reveal"><span>Model feedback</span><i></i></div>
+        <div class="experiment-cases">
+          <article class="experiment-case reveal">
+            <div class="case-video" role="img" aria-label="Placeholder video preview for experiment example 01">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div>
+              <div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Experiment video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Evaluation 01</span><time>08:24</time></div>
+              <div class="video-timeline"><i></i></div>
+            </div>
+            <div class="model-eval">
+              <div class="eval-head"><span>Illustrative model evaluation</span><b>Sample A</b></div>
+              <h3>Clear argument, quieter finish</h3>
+              <p>The presentation establishes its motivation quickly and uses the visual evidence consistently. The model notices a drop in vocal energy during the final explanation and recommends a short pause before the closing takeaway.</p>
+              <div class="eval-tags"><span>Evidence-linked</span><span>Time-anchored</span></div>
+            </div>
+          </article>
+
+          <article class="experiment-case reveal">
+            <div class="case-video case-video-two" role="img" aria-label="Placeholder video preview for experiment example 02">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div>
+              <div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Experiment video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Evaluation 02</span><time>06:48</time></div>
+              <div class="video-timeline"><i></i></div>
+            </div>
+            <div class="model-eval">
+              <div class="eval-head"><span>Illustrative model evaluation</span><b>Sample B</b></div>
+              <h3>Strong visuals, rushed transitions</h3>
+              <p>The model credits the slide hierarchy and clear diagram labels, while flagging a fast transition between the two central results. Its feedback points to the exact window where the speaker moves on before the audience has time to read.</p>
+              <div class="eval-tags"><span>Visual evidence</span><span>Actionable</span></div>
+            </div>
+          </article>
+
+          <article class="experiment-case reveal">
+            <div class="case-video case-video-three" role="img" aria-label="Placeholder video preview for experiment example 03">
+              <div class="case-slide"><span></span><i></i><i></i><i></i></div>
+              <div class="case-speaker"><i></i><span></span></div>
+              <button type="button" aria-label="Experiment video is not yet available"><span></span></button>
+              <div class="video-meta"><span>Evaluation 03</span><time>10:06</time></div>
+              <div class="video-timeline"><i></i></div>
+            </div>
+            <div class="model-eval">
+              <div class="eval-head"><span>Illustrative model evaluation</span><b>Sample C</b></div>
+              <h3>Confident delivery, missing references</h3>
+              <p>The model sees steady audience contact and a confident stance, but finds that the spoken explanation rarely points back to the diagrams. It suggests naming the visual relationship explicitly when introducing each new slide.</p>
+              <div class="eval-tags"><span>Multimodal</span><span>Coaching cue</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="experiment-label quant-label reveal"><span>Comparison placeholders</span><i></i></div>
+        <div class="quant-grid">
+          <article class="quant-card quant-table reveal">
+            <div class="quant-card-head"><div><span>Table placeholder</span><h3>Agreement with expert consensus</h3></div><b>To be added</b></div>
+            <div class="table-skeleton" role="img" aria-label="Placeholder table for quantitative agreement results">
+              <div class="table-row table-header"><i></i><i></i><i></i><i></i></div>
+              <div class="table-row"><i></i><i></i><i></i><i></i></div>
+              <div class="table-row"><i></i><i></i><i></i><i></i></div>
+              <div class="table-row"><i></i><i></i><i></i><i></i></div>
+              <div class="table-row"><i></i><i></i><i></i><i></i></div>
+            </div>
+            <p>Final table will report correlation, error, calibration, and score spread against the five-expert reference.</p>
+          </article>
+          <article class="quant-card quant-figure reveal">
+            <div class="quant-card-head"><div><span>Figure placeholder</span><h3>Baseline comparison</h3></div><b>To be added</b></div>
+            <div class="line-skeleton" role="img" aria-label="Placeholder line chart for quantitative baseline comparison">
+              <div class="line-grid"><i></i><i></i><i></i></div>
+              <svg viewBox="0 0 500 190" preserveAspectRatio="none" aria-hidden="true"><path d="M0 145 C60 125, 84 140, 132 107 S205 118, 251 86 S315 105, 358 62 S425 72, 500 28"/><path class="line-muted" d="M0 160 C55 151, 95 165, 140 136 S210 147, 263 124 S333 132, 383 104 S445 120, 500 92"/></svg>
+              <div class="line-labels"><span>baseline</span><span>AIMPACT</span></div>
+            </div>
+            <p>Final figure will compare systems on matched multimodal inputs and transfer performance.</p>
+          </article>
+          <article class="quant-card quant-table reveal">
+            <div class="quant-card-head"><div><span>Table placeholder</span><h3>Component ablations</h3></div><b>To be added</b></div>
+            <div class="ablation-skeleton" role="img" aria-label="Placeholder matrix for component ablation results">
+              <div class="ablation-head"><i></i><i></i><i></i><i></i><i></i></div>
+              <div><i></i><i></i><i></i><i></i><i></i></div>
+              <div><i></i><i></i><i></i><i></i><i></i></div>
+              <div><i></i><i></i><i></i><i></i><i></i></div>
+              <div><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <p>Final ablation table will isolate the evidence, reliability, collaboration, and alignment stages.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section summary-section" id="summary" aria-labelledby="summary-title">
+      <div class="section-shell summary-wrap reveal">
+        <div>
+          <h2 id="summary-title">Evidence you can trace.<br>Feedback you can act on.</h2>
+          <p class="summary-copy">AIMPACT reframes automated presentation assessment as a transparent, evidence-grounded collaboration between specialized agents and an expert-aligned judge. By preserving provenance, reasoning over reliability, and treating the rubric as an input, the system delivers adaptable scores and specific coaching feedback while keeping human judgment at the center.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <div class="footer-brand"><span class="wordmark-mark" aria-hidden="true">A</span><strong>AIMPACT</strong></div>
+    <p>AI-Enabled Multimodal Presentation Assessment &amp; Coaching Tutor</p>
+    <div class="footer-links"><a href="aimpact_draft.pdf">Paper</a><a href="https://github.com/FairyStories-wzj/AIMPACT">GitHub</a><a href="#top">Back to top ↑</a></div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
