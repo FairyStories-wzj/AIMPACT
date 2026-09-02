@@ -21,3 +21,7 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+document.querySelectorAll('.button.is-placeholder').forEach((button) => {
+  button.addEventListener('click', (event) => event.preventDefault());
+});
