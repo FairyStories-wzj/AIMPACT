@@ -1,2 +1,5 @@
 .idea/
-videos/
+videos/*
+!videos/compressed/
+!videos/compressed/**
+download_selected_videos.sh
